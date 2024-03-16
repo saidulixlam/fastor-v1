@@ -1,0 +1,23 @@
+.swipeable-container {
+    overflow: hidden;
+    width: 100%; /* Ensure container takes up full width */
+  }
+  
+  .swipeable-content {
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+  
+  .swipeable-item {
+    flex: 0 0 auto;
+    width: 100%; /* Default width for smaller devices */
+  
+    @media (min-width: 768px) {
+      width: 33.33%; /* Show three items per swipe on larger screens */
+      height: 90%; /* Adjust height for better display */
+    }
+  
+    @media (min-width: 992px) {
+      width: 25%; /* Show four items per swipe on even larger screens */
+    }
+  }
