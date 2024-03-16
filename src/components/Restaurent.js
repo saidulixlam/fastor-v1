@@ -37,8 +37,8 @@ const Restaurant = ({ name, address, image }) => {
 
 const Popular = ({ name, ratings, image }) => {
     return (
-        <div className=" p-2 card mb-4 border-0 shadow-md my-2 d-flex flex-row align-items-center" style={{ height: '16rem', borderRadius: '14px', height: '40%', listStyle: 'none' }}>
-            <img src={image} alt="Restaurant Image" style={{ objectFit: "cover", width: "50%", height: '165px', borderRadius: '14px' }} />
+        <div className=" p-2 card mb-4 border-0 shadow-md my-2 d-flex flex-row align-items-center" style={{borderRadius: '14px', height: '40%', listStyle: 'none' }}>
+            <img src={image} alt="Restaurant" style={{ objectFit: "cover", width: "50%", height: '165px', borderRadius: '14px' }} />
             <div className="bg-white bg-opacity-75 mx-5 mb-3" style={{ width: '50%', height: "140px" }}>
                 <h6 className="card-title">{name}</h6>
                 <p className="card-text text-muted p-0">Cakes,Pastry,Pastas</p>

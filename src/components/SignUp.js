@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
-    const navigate = useNavigate(); // Initialize useNavigate
+    const navigate = useNavigate(); 
     const [phoneNumberInput, setPhoneNumberInput] = useState('');
     const [error, setError] = useState('');
     const [show, setShow] = useState(false);
@@ -13,7 +13,7 @@ const Signup = () => {
             const timer = setTimeout(() => {
                 setShow(false);
                 navigate(`/otp?phone=${phoneNumberInput}`);
-            }, 3000); // Navigate after 3 seconds
+            }, 3000); 
             return () => clearTimeout(timer);
         }
     }, [show, phoneNumberInput, navigate]);
@@ -24,14 +24,12 @@ const Signup = () => {
             const response = await axios.post(
                 `https://staging.fastor.in/v1/pwa/user/register/`,
                 {
-                    phone: "981897945", // Your phone number
-                    dial_code: "+91"   // Your dialing code
+                    phone: "981897945", 
+                    dial_code: "+91"  
                 }
             );
-            console.log(response.data);
             if (response.data.status === "Success") {
                 setShow(true);
-                // navigate(`/otp?phone=${phoneNumberInput}`);
             } else {
                 setError(response.data.error_message);
             }
@@ -40,8 +38,6 @@ const Signup = () => {
             setError('Failed to send verification code. Please try again.');
         }
     };
-    
-    
 
     return (
         <div style={{minHeight:'100vh'}} className="container d-flex justify-content-center align-items-center">
