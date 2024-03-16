@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import Signup from './components/SignUp';
+import OtpVerification from './components/OtpVerification';
+import RestaurantList from './components/Restaurent';
+import RestaurantDetails from './components/Details';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   return (
+    <Router>
+      <div className="m-0">
+        {/* <div> Adjust column width for medium and large devices */}
+          <Routes>
+            <Route path="/" element={<Signup />} />
+            <Route path="/otp" element={<OtpVerification />} />
+            <Route path="/restaurents" element={<RestaurantList/>}/>
+            <Route path="/detail/:id" element={<RestaurantDetails />} />
+          </Routes>
+        {/* </div> */}
+      </div>
+    </Router>
   );
 }
 
