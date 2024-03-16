@@ -24,8 +24,8 @@ const OtpVerification = () => {
         try {
             const response = await axios.post(`https://staging.fastor.in/v1/pwa/user/login/`,
             {
-                phone: "981897945", // Your phone number
-                otp: "123456",   // Your dialing code
+                phone: "981897945", 
+                otp: "123456",   
                 dial_code: "+91"
             }
             );
@@ -34,7 +34,6 @@ const OtpVerification = () => {
             localStorage.setItem('token',token);
            if(response.status === 200){
             setShow(true);
-            // navigate(`/otp?phone=${phoneNumberInput}`);
            }
             
         } catch (error) {
@@ -45,7 +44,6 @@ const OtpVerification = () => {
 
     const handleResend = (e) => {
         e.preventDefault();
-        // Resend OTP logic here
         alert('Resending OTP...');
     };
 

@@ -7,7 +7,6 @@ import { faDrupal } from '@fortawesome/free-brands-svg-icons';
 import { BiSolidOffer } from "react-icons/bi";
 import { IoWalletOutline } from "react-icons/io5";
 
-
 const Restaurant = ({ name, address, image }) => {
     return (
         <div className="card mb-5 shadow-sm mx-2 my-2 d-flex flex-column align-center" style={{
@@ -70,18 +69,13 @@ const RestaurantList = () => {
                     }
                 );
                 const { data } = response;
-                const restaurantsList = data.map(({ restaurant_code, restaurant_id, restaurant_mode, restaurant_name, location, images, cuisines, rating }) => ({
-                    restaurant_code,
+                const restaurantsList = data.map(({ restaurant_id, restaurant_name, location, images, rating }) => ({
+
                     restaurant_id,
-                    restaurant_mode,
                     restaurant_name,
                     rating: rating.restaurant_avg_rating,
                     location: location,
                     image: images[0].url,
-                    cuisines: cuisines.map(cuisine => ({
-                        cuisine_id: cuisine.cuisine_id,
-                        cuisine_name: cuisine.cuisine_name
-                    }))
                 }));
 
                 setRestaurants(restaurantsList);
@@ -148,12 +142,12 @@ const RestaurantList = () => {
                 <SwipeableViews axis='x'>
                     <div className="d-flex flex-nowrap" style={{ height: '260px' }}>
                         {restaurants.map((restaurant, index) => (
-                            <div key={index} className="col-5 gap-2 mb-2" > {/* Adjust width and height as needed */}
+                            <div key={index} className="col-5 gap-2 mb-2" >
                                 <Link to={`/detail/${restaurant.restaurant_id}`} style={{ textDecoration: 'none' }}>
                                     <Restaurant
                                         image={restaurant.image}
                                         name={restaurant.restaurant_name}
-                                        address={restaurant.location?.location_address || null} // Use optional chaining and fallback to null if location is null
+                                        address={restaurant.location?.location_address || null}
                                         rating={restaurant.restaurant_mode}
                                     />
                                 </Link>
@@ -173,7 +167,6 @@ const RestaurantList = () => {
                                 address={restaurant.location?.location_address || null}
                                 ratings={restaurant.rating}
                             />
-                            
                         </Link>
                     </div>
                 ))}
