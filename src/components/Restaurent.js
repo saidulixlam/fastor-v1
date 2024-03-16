@@ -173,6 +173,7 @@ const RestaurantList = () => {
                                 address={restaurant.location?.location_address || null}
                                 ratings={restaurant.rating}
                             />
+                            
                         </Link>
                     </div>
                 ))}
