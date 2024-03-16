@@ -3,8 +3,6 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { IoWalletOutline } from "react-icons/io5";
 import { BiSolidOffer } from "react-icons/bi";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDrupal } from '@fortawesome/free-brands-svg-icons';
 import './Swipe.css';
 
 const Restaurant = ({ name, address, image }) => {
@@ -128,7 +126,7 @@ const RestaurantList = () => {
                         <h3 className="mb-0">Order from New Delhi</h3>
                     </div>
                     <div className="ml-auto mr-1">
-                        <FontAwesomeIcon icon={faDrupal} style={{ color: '#FFD43B', fontSize: '2em' }} />
+                        <h2>X</h2>
                     </div>
                 </div>
             </nav>
