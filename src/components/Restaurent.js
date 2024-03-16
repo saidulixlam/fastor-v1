@@ -102,7 +102,7 @@ const RestaurantList = () => {
 
                         <div className="d-flex align-items-center">
                             <span>Pre Order From</span>
-                            <span className="ml-2">icon</span>
+                            
                         </div>
 
                         <h3 className="mb-0">Order from New Delhi</h3>
